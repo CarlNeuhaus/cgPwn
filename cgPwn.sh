@@ -4,6 +4,9 @@
 #################################
 HOMEDIR=~
 
+# Update time to aus/sydney
+sudo timedatectl set-timezone 'Australia/Sydney'
+
 # Updates
 sudo apt-get -y update
 
@@ -67,6 +70,12 @@ cd ~/tools
 git clone https://github.com/radare/radare2
 cd radare2
 ./sys/install.sh
+
+# Install zsh
+sudo apt-get -y install zsh
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install binwalk
 cd ~/tools
@@ -166,7 +175,7 @@ sudo apt-get -y install golang
 sudo apt-get -y install stow
 cd ~
 rm .bashrc
-git clone --recursive https://github.com/0xM3R/dotfiles
+git clone --recursive https://github.com/carlneuhuas/dotfiles
 cd dotfiles
 chmod a+x ./install.sh
 ./install.sh
